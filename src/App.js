@@ -11,6 +11,8 @@ import Header from './components/header';
 
 const App = () => {
 
+  
+
   const GET_DATA = gql `
        query getData {
         complaint {
@@ -26,28 +28,7 @@ const App = () => {
     `;
 
   const {data, error, loading } = useQuery(GET_DATA);
-
- 
- 
   
-
-  useEffect(() => {
-    
-    let myHeaders = new Headers();
-    myHeaders = {...myHeaders, "x-hasura-access-key": "SECRET" }
-
-    fetch( 'https://test-demo-gql-backend.herokuapp.com/api/rest/data',
-    {
-      
-      headers: myHeaders,
-
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(error => console.error("error", error));
-
-    
-  },[])
 
   // set initial theme as dark
   const [theme, setTheme] = 
@@ -55,7 +36,6 @@ const App = () => {
 
   // store theme in localStorage
   localStorage.setItem("theme", theme);
-  console.log(theme);
 
   
 

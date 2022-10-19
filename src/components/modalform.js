@@ -1,6 +1,7 @@
 import { useMutation, gql } from "@apollo/client";
 import { useState } from "react";
 import CloseSVG from "./closesvg";
+import PencilSVG from "./pencilsvg";
 
 // Modal
 
@@ -81,6 +82,7 @@ const ModalForm = () => {
                type="button" id="openmodal">
 
                 Send a complaint
+                <PencilSVG />
             </button>
             
             {/* modal content */}
